@@ -27,9 +27,9 @@ data = pd.read_excel(r'/content/drive/MyDrive/Datasets (1)/BD1Pediat.xls', useco
 
 pip install xlrd==1.2.0
 
-"""Função ```mean_confidence_interval``` é responsável por retornar a média, o limite inferior e o limite superior."""
+"""Função ```calculaIntervaloConfiancaQualitativa``` é responsável por retornar a média, o limite inferior e o limite superior."""
 
-def mean_confidence_interval(data, confidence=0.95):
+def calculaIntervaloConfiancaQualitativa(data, confidence=0.95):
     a = 1.0 * np.array(data)
     n = len(a)
     m, se = np.mean(a), scipy.stats.sem(a)
@@ -47,31 +47,31 @@ def printInformacoesQuantitativas(data):
   # Desvio Padrão para a coluna quantitativa passada por referência
   print("Desvio padrão encontrado", np.std(data))
   # Confiança de 95% para para a coluna quantitativa passada por referência
-  print("Intervalo de confiança 95% encontrado: ", mean_confidence_interval(data))
+  print("Intervalo de confiança 95% encontrado: ", calculaIntervaloConfiancaQualitativa(data))
 
-"""Função ```relative_frequency```  retorna a frequência relativa para variaveis qualitativas. 
+"""Função ```calculaFrequenciaRelativa```  retorna a frequência relativa para variaveis qualitativas. 
 
 ```SEXO```, ```SANGUE```, ```RH```, ```ANOMALIA``` 
 """
 
-def relative_frequency(list_of_chars):
+def calculaFrequenciaRelativa(list_of_chars):
     #find relative frequency
-    relative_frequency = {}
+    calculaFrequenciaRelativa = {}
     for char in list_of_chars:
-        if char in relative_frequency:
-            relative_frequency[char] += 1
+        if char in calculaFrequenciaRelativa:
+            calculaFrequenciaRelativa[char] += 1
         else:
-            relative_frequency[char] = 1
-    for char in relative_frequency:
-        relative_frequency[char] = relative_frequency[char]/len(list_of_chars)
-    return relative_frequency
+            calculaFrequenciaRelativa[char] = 1
+    for char in calculaFrequenciaRelativa:
+        calculaFrequenciaRelativa[char] = calculaFrequenciaRelativa[char]/len(list_of_chars)
+    return calculaFrequenciaRelativa
 
-def confidence_interval(list_of_words):
+def calculaIntervaloConfiancaQualitativo(list_of_words):
     #calculate relative frequency
-    relative_frequency = relative_frequency(list_of_words)
+    calculaFrequenciaRelativa = calculaFrequenciaRelativa(list_of_words)
     #calculate confidence interval
-    confidence_interval = 1.96 * (relative_frequency * (1 - relative_frequency)) / len(list_of_words)
-    return confidence_interval
+    calculaIntervaloConfiancaQualitativo = 1.96 * (calculaFrequenciaRelativa * (1 - calculaFrequenciaRelativa)) / len(list_of_words)
+    return calculaIntervaloConfiancaQualitativo
 
 print("Informações sobre T_GEST (Tempo de gestação, em dias)")
 printInformacoesQuantitativas(data['T_GEST'])
@@ -90,7 +90,7 @@ printInformacoesQuantitativas(data['PT'])
 
 freqRelativaSexo = pd.Series(data['SEXO']).value_counts()
 print(freqRelativaSexo/len(data['SEXO']))
-relative_frequency(data['SEXO'].tolist())
+calculaFrequenciaRelativa(data['SEXO'].tolist())
 print(freqRelativaSexo)
 
 freqRelativaSangue = pd.Series(data['SANGUE']).value_counts()
