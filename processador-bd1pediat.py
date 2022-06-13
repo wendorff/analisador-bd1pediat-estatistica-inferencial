@@ -56,9 +56,9 @@ print(calculaFrequenciaRelativa(data['SANGUE']))
 print("Ocorrências:\n", pd.Series(data['SANGUE']).value_counts())
 
 print("Informações sobre RH (POS ou NEG)")
-calculaFrequenciaRelativa(data['RH'])
+print(calculaFrequenciaRelativa(data['RH']))
 print("Ocorrências:\n", pd.Series(data['RH']).value_counts()) 
 
 print("Informações sobre ANOMALIA (SIM ou NÃO)")
-calculaFrequenciaRelativa(data['ANOMALIA'])
+print(calculaFrequenciaRelativa(data['ANOMALIA']))
 print("Ocorrências:\n", pd.Series(data['ANOMALIA']).value_counts())
