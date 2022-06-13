@@ -1,0 +1,35 @@
+commit 24b3a8e4b7fad4a1ba9d08eb4a384bdc04fd3ed2
+Author: Cícero Wendorff <cicerow@ufcspa.edu.br>
+Date:   Mon Jun 13 19:49:14 2022 -0300
+
+    Inserção da informação de ocorrências para o processamento qualitativo
+
+commit 7b96c6fe2de338194dff51015489954b6aae6414
+Author: Cícero Wendorff <cicerow@ufcspa.edu.br>
+Date:   Mon Jun 13 19:31:14 2022 -0300
+
+    Remoção de comentários, mudança de path para dataset, exclusão de método não chamado
+
+commit fea75ed6257fbb5291ddc9749cdeefb565588406
+Author: Cícero Wendorff <cicerow@ufcspa.edu.br>
+Date:   Mon Jun 13 19:28:06 2022 -0300
+
+    Refatoramento de chamadas de métodos para evitar valores hardcoded
+
+commit 1c71e67b11e49f3ab0d23a7663eaa41970cd918d
+Author: Cícero Wendorff <cicerow@ufcspa.edu.br>
+Date:   Mon Jun 13 19:19:24 2022 -0300
+
+    Alteração de assinatura do método calculaIntervaloConfiancaQualitativa()
+
+commit 6d5bbeee46cb3ffb5383dc714cbd60956b3742a0
+Author: Cícero Wendorff <cicerow@ufcspa.edu.br>
+Date:   Mon Jun 13 19:09:53 2022 -0300
+
+    Versão original não tratada.
+
+commit f0888a354411ac9832986a014e7704becbc26940
+Author: Cícero W <cicero.wendorff@gmail.com>
+Date:   Mon Jun 13 19:04:17 2022 -0300
+
+    Initial commit
